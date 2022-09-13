@@ -1,0 +1,30 @@
+﻿@model IEnumerable<CryptoGrimoire.Models.Exchange>
+@{
+    ViewData["Title"] = "Exchanges";
+}
+
+<table class="table table-bordered table-striped text-center align-middle">
+    <thead>
+        <tr>
+            <th scope="col">Image</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Name)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.ShortDesc)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) 
+        {
+            <tr style="cursor: pointer;" onclick="location.href = '@(Url.Action("Details", "Exchanges", new { exchangeName = item.Name }))'">
+                <td>
+                    <img alt="No Image" height="60" src="@item.LogoPath"/>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShortDesc)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

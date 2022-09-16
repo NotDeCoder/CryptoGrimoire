@@ -1,9 +1,11 @@
 ﻿@model CryptoGrimoire.Models.Exchange
 @{
     ViewData["Title"] = "Details";
+    var tradingPairs = ViewBag.TradingPairs as List<PageTradingPair>;
 }
+
 <div>
-    <img alt="No Image" height="300" src="@Model.LogoPath" />
+    <img alt="No Image" height="300" src="@Model.LogoUrl" />
     <dl class="row">
 
         <dt class = "col-sm-2">
@@ -42,23 +44,24 @@
         </dd>
     </dl>
 </div>
-
-@*<table class="table table-bordered table-striped text-center align-middle">
+@if (tradingPairs.Count == 0)
+{
+    <p>Sorry, there are no pairs with this Exchange</p>
+}
+else
+{
+    <table class="table table-bordered table-striped text-center align-middle">
     <thead>
         <tr>
-            <th scope="col">Image</th>
             <th scope="col">PairName</th>
             <th scope="col">Description</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.PageTradingPairs)
+        @foreach (var item in tradingPairs)
         {
-            <tr style="cursor: pointer;" onclick="location.href = '@(Url.Action("Details", "Pairs", new { Name = item.Name }))'">
+            <tr style="cursor: pointer;" onclick="location.href = '@(Url.Action("Details", "Pairs", new { pairName = item.Name }))'">
                 <td width="5%">
-                    <img alt="No Image" height="60" src="@item.ImagePath" />
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <td>
@@ -67,6 +70,7 @@
             </tr>
         }
     </tbody>
-</table>*@
+</table>
+}
 
 <a asp-action="Index">Back to List</a>

@@ -15,8 +15,8 @@
         @foreach (var item in Model) 
         {
             <tr style="cursor: pointer;" onclick="location.href = '@(Url.Action("Details", "Exchanges", new { exchangeName = item.Name }))'">
-                <td>
-                    <img alt="No Image" height="60" src="@item.LogoPath"/>
+                <td width="15%">
+                    <img alt="No Image" height="60" src="@item.LogoUrl"/>
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)

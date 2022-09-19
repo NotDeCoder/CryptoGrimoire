@@ -12,18 +12,18 @@
 
 <div>
     <hr />
-    <dl class="row">        
-        <dt class = "col-sm-2">
+    <dl class="row">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Name)
         </dd>
-        
-        <dt class = "col-sm-2">
+
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Description)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Description)
         </dd>
     </dl>
@@ -51,7 +51,7 @@ else
         <tbody>
             @foreach (var item in exchangeTradingPairs)
             {
-                <tr style="cursor: pointer;" onclick="location.href = '@(Url.Action("Details", "Pairs", new { Name = item.Name }))'">
+                <tr style="cursor: pointer;" onclick="location.href = '@(Url.Action("Details", "Pairs", new { pairName = item.Name }))'">
                     <td>
                         @Html.DisplayFor(modelItem => item.ExchangeName)
                     </td>

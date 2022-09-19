@@ -1,4 +1,5 @@
 ﻿using CryptoGrimoire.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CryptoGrimoire.Controllers
@@ -23,21 +24,21 @@ namespace CryptoGrimoire.Controllers
 
             ViewBag.ExchangeTradingPairs = db.ExchangeTradingPairs.Where(x => x.Name == pairName).ToList();
 
-            string leftElementOfPair = pairName.Split('_', StringSplitOptions.None)[0];
-            string rightElementOfPair = pairName.Split('_', StringSplitOptions.None)[1];
+            string[] splitedName = pairName.Split('_', 2);
+            
+            string leftElementOfPair = splitedName[0];
+            string rightElementOfPair = splitedName[1];
 
             ViewBag.OthersPairsWithLeftElementOfPair =
-                db.PageTradingPairs.ToList().Where(x =>
-                    x.Name != pairName && (
-                    leftElementOfPair == x.Name.Split('_', StringSplitOptions.None)[0] ||
-                    leftElementOfPair == x.Name.Split('_', StringSplitOptions.None)[1]))
+                db.PageTradingPairs.Where(x =>
+                    x.Name != pairName &&
+                    x.Name.Contains(leftElementOfPair + '_'))
                 .ToList();
 
             ViewBag.OthersPairsWithRightElementOfPair =
-                db.PageTradingPairs.ToList().Where(x =>
-                    x.Name != pairName && (
-                    rightElementOfPair == x.Name.Split('_', StringSplitOptions.None)[0] ||
-                    rightElementOfPair == x.Name.Split('_', StringSplitOptions.None)[1]))
+                db.PageTradingPairs.Where(x =>
+                    x.Name != pairName &&
+                    x.Name.Contains('_' + rightElementOfPair))
                 .ToList();
 
             return View(pageTradingPair);

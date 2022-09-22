@@ -19,12 +19,12 @@ namespace CryptoGrimoire.Models
             modelBuilder.Entity<Exchange>().HasData(
                 new Exchange[]
                 {
-                    new Exchange { Name = "Binance", ShortDesc = "SBinD", LongDesc = "Long Binance Description", Url = "binance.com"},
-                    new Exchange { Name = "Bittrex", ShortDesc = "SBitD", LongDesc = "Long Bittrex Description", Url = "bittrex.com"},
-                    new Exchange { Name = "Poloniex", ShortDesc = "SPolD", LongDesc = "Long Poloniex Description", Url = "poloniex.com"},
-                    new Exchange { Name = "Bitfinex", ShortDesc = "SBitfD", LongDesc = "Long Bitfinex Description", Url = "bitfinex.com"},
-                    new Exchange { Name = "HitBTC", ShortDesc = "SHitD", LongDesc = "Long HitBTC Description", Url = "hitbtc.com"},
-                    new Exchange { Name = "Exmo", ShortDesc = "SExmD", LongDesc = "Long Exmo Description", Url = "exmo.com"}
+                    new Exchange { Name = "Binance", ShortDesc = "SBinD", LongDesc = "Long Binance Description", Url = "https://www.binance.com/"},
+                    new Exchange { Name = "Bittrex", ShortDesc = "SBitD", LongDesc = "Long Bittrex Description", Url = "https://bittrex.com/"},
+                    new Exchange { Name = "Poloniex", ShortDesc = "SPolD", LongDesc = "Long Poloniex Description", Url = "https://poloniex.com/"},
+                    new Exchange { Name = "Bitfinex", ShortDesc = "SBitfD", LongDesc = "Long Bitfinex Description", Url = "https://www.bitfinex.com/"},
+                    new Exchange { Name = "HitBTC", ShortDesc = "SHitD", LongDesc = "Long HitBTC Description", Url = "https://hitbtc.com/"},
+                    new Exchange { Name = "Exmo", ShortDesc = "SExmD", LongDesc = "Long Exmo Description", Url = "https://exmo.com/"}
 
                 });
             modelBuilder.Entity<PageTradingPair>().HasData(

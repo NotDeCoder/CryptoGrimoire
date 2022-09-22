@@ -1,4 +1,6 @@
 ﻿@model IEnumerable<CryptoGrimoire.Models.PageTradingPair>
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 @{
     ViewData["Title"] = "Trading pairs";
 }
@@ -6,8 +8,8 @@
 <table class="table table-bordered table-striped text-center align-middle">
     <thead>
         <tr>
-            <th scope="col">PairName</th>
-            <th scope="col">Description</th>
+            <th scope="col">@Localizer["PairName"]</th>
+            <th scope="col">@Localizer["PairDescription"]</th>
         </tr>
     </thead>
     <tbody>

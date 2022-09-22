@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CryptoGrimoire.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220916114631_Initial")]
+    [Migration("20220922221751_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -82,42 +82,42 @@ namespace CryptoGrimoire.Migrations
                             Name = "Binance",
                             LongDesc = "Long Binance Description",
                             ShortDesc = "SBinD",
-                            Url = "binance.com"
+                            Url = "https://www.binance.com/"
                         },
                         new
                         {
                             Name = "Bittrex",
                             LongDesc = "Long Bittrex Description",
                             ShortDesc = "SBitD",
-                            Url = "bittrex.com"
+                            Url = "https://bittrex.com/"
                         },
                         new
                         {
                             Name = "Poloniex",
                             LongDesc = "Long Poloniex Description",
                             ShortDesc = "SPolD",
-                            Url = "poloniex.com"
+                            Url = "https://poloniex.com/"
                         },
                         new
                         {
                             Name = "Bitfinex",
                             LongDesc = "Long Bitfinex Description",
                             ShortDesc = "SBitfD",
-                            Url = "bitfinex.com"
+                            Url = "https://www.bitfinex.com/"
                         },
                         new
                         {
                             Name = "HitBTC",
                             LongDesc = "Long HitBTC Description",
                             ShortDesc = "SHitD",
-                            Url = "hitbtc.com"
+                            Url = "https://hitbtc.com/"
                         },
                         new
                         {
                             Name = "Exmo",
                             LongDesc = "Long Exmo Description",
                             ShortDesc = "SExmD",
-                            Url = "exmo.com"
+                            Url = "https://exmo.com/"
                         });
                 });
 
@@ -174,7 +174,7 @@ namespace CryptoGrimoire.Migrations
                             Low = 41111m,
                             Name = "btc_usdt",
                             SellPrice = 42500m,
-                            UpdatedDateTime = new DateTime(2022, 9, 16, 14, 46, 31, 154, DateTimeKind.Local).AddTicks(7821),
+                            UpdatedDateTime = new DateTime(2022, 9, 23, 1, 17, 49, 100, DateTimeKind.Local).AddTicks(6463),
                             Volume = 13546213m
                         },
                         new
@@ -187,7 +187,7 @@ namespace CryptoGrimoire.Migrations
                             Low = 1300m,
                             Name = "eth_usdt",
                             SellPrice = 1350m,
-                            UpdatedDateTime = new DateTime(2022, 9, 16, 14, 46, 31, 154, DateTimeKind.Local).AddTicks(7857),
+                            UpdatedDateTime = new DateTime(2022, 9, 23, 1, 17, 49, 100, DateTimeKind.Local).AddTicks(6505),
                             Volume = 646133m
                         },
                         new
@@ -200,7 +200,7 @@ namespace CryptoGrimoire.Migrations
                             Low = 0.33m,
                             Name = "xrp_usdt",
                             SellPrice = 0.35m,
-                            UpdatedDateTime = new DateTime(2022, 9, 16, 14, 46, 31, 154, DateTimeKind.Local).AddTicks(7862),
+                            UpdatedDateTime = new DateTime(2022, 9, 23, 1, 17, 49, 100, DateTimeKind.Local).AddTicks(6509),
                             Volume = 354513m
                         },
                         new
@@ -213,7 +213,7 @@ namespace CryptoGrimoire.Migrations
                             Low = 240m,
                             Name = "bch_usdt",
                             SellPrice = 250m,
-                            UpdatedDateTime = new DateTime(2022, 9, 16, 14, 46, 31, 154, DateTimeKind.Local).AddTicks(7865),
+                            UpdatedDateTime = new DateTime(2022, 9, 23, 1, 17, 49, 100, DateTimeKind.Local).AddTicks(6512),
                             Volume = 121351m
                         },
                         new
@@ -226,7 +226,7 @@ namespace CryptoGrimoire.Migrations
                             Low = 110m,
                             Name = "ltc_usdt",
                             SellPrice = 120m,
-                            UpdatedDateTime = new DateTime(2022, 9, 16, 14, 46, 31, 154, DateTimeKind.Local).AddTicks(7894),
+                            UpdatedDateTime = new DateTime(2022, 9, 23, 1, 17, 49, 100, DateTimeKind.Local).AddTicks(6515),
                             Volume = 354513m
                         },
                         new
@@ -239,7 +239,7 @@ namespace CryptoGrimoire.Migrations
                             Low = 41111m,
                             Name = "btc_usdt",
                             SellPrice = 42500m,
-                            UpdatedDateTime = new DateTime(2022, 9, 16, 14, 46, 31, 154, DateTimeKind.Local).AddTicks(7897),
+                            UpdatedDateTime = new DateTime(2022, 9, 23, 1, 17, 49, 100, DateTimeKind.Local).AddTicks(6517),
                             Volume = 13546213m
                         },
                         new
@@ -252,7 +252,7 @@ namespace CryptoGrimoire.Migrations
                             Low = 1300m,
                             Name = "eth_usdt",
                             SellPrice = 1350m,
-                            UpdatedDateTime = new DateTime(2022, 9, 16, 14, 46, 31, 154, DateTimeKind.Local).AddTicks(7899),
+                            UpdatedDateTime = new DateTime(2022, 9, 23, 1, 17, 49, 100, DateTimeKind.Local).AddTicks(6520),
                             Volume = 646133m
                         },
                         new
@@ -265,7 +265,7 @@ namespace CryptoGrimoire.Migrations
                             Low = 0.33m,
                             Name = "xrp_usdt",
                             SellPrice = 0.35m,
-                            UpdatedDateTime = new DateTime(2022, 9, 16, 14, 46, 31, 154, DateTimeKind.Local).AddTicks(7902),
+                            UpdatedDateTime = new DateTime(2022, 9, 23, 1, 17, 49, 100, DateTimeKind.Local).AddTicks(6522),
                             Volume = 354513m
                         },
                         new
@@ -278,7 +278,7 @@ namespace CryptoGrimoire.Migrations
                             Low = 110m,
                             Name = "ltc_usdt",
                             SellPrice = 120m,
-                            UpdatedDateTime = new DateTime(2022, 9, 16, 14, 46, 31, 154, DateTimeKind.Local).AddTicks(7904),
+                            UpdatedDateTime = new DateTime(2022, 9, 23, 1, 17, 49, 100, DateTimeKind.Local).AddTicks(6524),
                             Volume = 354513m
                         },
                         new
@@ -291,7 +291,7 @@ namespace CryptoGrimoire.Migrations
                             Low = 41111m,
                             Name = "btc_usdt",
                             SellPrice = 42500m,
-                            UpdatedDateTime = new DateTime(2022, 9, 16, 14, 46, 31, 154, DateTimeKind.Local).AddTicks(7907),
+                            UpdatedDateTime = new DateTime(2022, 9, 23, 1, 17, 49, 100, DateTimeKind.Local).AddTicks(6526),
                             Volume = 13546213m
                         },
                         new
@@ -304,7 +304,7 @@ namespace CryptoGrimoire.Migrations
                             Low = 1300m,
                             Name = "eth_usdt",
                             SellPrice = 1350m,
-                            UpdatedDateTime = new DateTime(2022, 9, 16, 14, 46, 31, 154, DateTimeKind.Local).AddTicks(7909),
+                            UpdatedDateTime = new DateTime(2022, 9, 23, 1, 17, 49, 100, DateTimeKind.Local).AddTicks(6528),
                             Volume = 646133m
                         },
                         new
@@ -317,7 +317,7 @@ namespace CryptoGrimoire.Migrations
                             Low = 0.33m,
                             Name = "xrp_usdt",
                             SellPrice = 0.35m,
-                            UpdatedDateTime = new DateTime(2022, 9, 16, 14, 46, 31, 154, DateTimeKind.Local).AddTicks(7912),
+                            UpdatedDateTime = new DateTime(2022, 9, 23, 1, 17, 49, 100, DateTimeKind.Local).AddTicks(6531),
                             Volume = 354513m
                         },
                         new
@@ -330,7 +330,7 @@ namespace CryptoGrimoire.Migrations
                             Low = 41111m,
                             Name = "btc_usdt",
                             SellPrice = 42500m,
-                            UpdatedDateTime = new DateTime(2022, 9, 16, 14, 46, 31, 154, DateTimeKind.Local).AddTicks(7914),
+                            UpdatedDateTime = new DateTime(2022, 9, 23, 1, 17, 49, 100, DateTimeKind.Local).AddTicks(6533),
                             Volume = 13546213m
                         },
                         new
@@ -343,7 +343,7 @@ namespace CryptoGrimoire.Migrations
                             Low = 1300m,
                             Name = "eth_usdt",
                             SellPrice = 1350m,
-                            UpdatedDateTime = new DateTime(2022, 9, 16, 14, 46, 31, 154, DateTimeKind.Local).AddTicks(7917),
+                            UpdatedDateTime = new DateTime(2022, 9, 23, 1, 17, 49, 100, DateTimeKind.Local).AddTicks(6535),
                             Volume = 646133m
                         },
                         new
@@ -356,7 +356,7 @@ namespace CryptoGrimoire.Migrations
                             Low = 0.33m,
                             Name = "xrp_usdt",
                             SellPrice = 0.35m,
-                            UpdatedDateTime = new DateTime(2022, 9, 16, 14, 46, 31, 154, DateTimeKind.Local).AddTicks(7919),
+                            UpdatedDateTime = new DateTime(2022, 9, 23, 1, 17, 49, 100, DateTimeKind.Local).AddTicks(6537),
                             Volume = 354513m
                         },
                         new
@@ -369,7 +369,7 @@ namespace CryptoGrimoire.Migrations
                             Low = 240m,
                             Name = "bch_usdt",
                             SellPrice = 250m,
-                            UpdatedDateTime = new DateTime(2022, 9, 16, 14, 46, 31, 154, DateTimeKind.Local).AddTicks(7921),
+                            UpdatedDateTime = new DateTime(2022, 9, 23, 1, 17, 49, 100, DateTimeKind.Local).AddTicks(6540),
                             Volume = 121351m
                         },
                         new
@@ -382,7 +382,7 @@ namespace CryptoGrimoire.Migrations
                             Low = 41111m,
                             Name = "btc_usdt",
                             SellPrice = 42500m,
-                            UpdatedDateTime = new DateTime(2022, 9, 16, 14, 46, 31, 154, DateTimeKind.Local).AddTicks(7924),
+                            UpdatedDateTime = new DateTime(2022, 9, 23, 1, 17, 49, 100, DateTimeKind.Local).AddTicks(6542),
                             Volume = 13546213m
                         },
                         new
@@ -395,7 +395,7 @@ namespace CryptoGrimoire.Migrations
                             Low = 1300m,
                             Name = "eth_usdt",
                             SellPrice = 1350m,
-                            UpdatedDateTime = new DateTime(2022, 9, 16, 14, 46, 31, 154, DateTimeKind.Local).AddTicks(7926),
+                            UpdatedDateTime = new DateTime(2022, 9, 23, 1, 17, 49, 100, DateTimeKind.Local).AddTicks(6544),
                             Volume = 646133m
                         },
                         new
@@ -408,7 +408,7 @@ namespace CryptoGrimoire.Migrations
                             Low = 0.33m,
                             Name = "xrp_usdt",
                             SellPrice = 0.35m,
-                            UpdatedDateTime = new DateTime(2022, 9, 16, 14, 46, 31, 154, DateTimeKind.Local).AddTicks(7928),
+                            UpdatedDateTime = new DateTime(2022, 9, 23, 1, 17, 49, 100, DateTimeKind.Local).AddTicks(6547),
                             Volume = 354513m
                         },
                         new
@@ -421,7 +421,7 @@ namespace CryptoGrimoire.Migrations
                             Low = 240m,
                             Name = "bch_usdt",
                             SellPrice = 250m,
-                            UpdatedDateTime = new DateTime(2022, 9, 16, 14, 46, 31, 154, DateTimeKind.Local).AddTicks(7931),
+                            UpdatedDateTime = new DateTime(2022, 9, 23, 1, 17, 49, 100, DateTimeKind.Local).AddTicks(6549),
                             Volume = 121351m
                         },
                         new
@@ -434,7 +434,7 @@ namespace CryptoGrimoire.Migrations
                             Low = 110m,
                             Name = "ltc_usdt",
                             SellPrice = 120m,
-                            UpdatedDateTime = new DateTime(2022, 9, 16, 14, 46, 31, 154, DateTimeKind.Local).AddTicks(7933),
+                            UpdatedDateTime = new DateTime(2022, 9, 23, 1, 17, 49, 100, DateTimeKind.Local).AddTicks(6551),
                             Volume = 354513m
                         },
                         new
@@ -447,7 +447,7 @@ namespace CryptoGrimoire.Migrations
                             Low = 41111m,
                             Name = "btc_usdt",
                             SellPrice = 42500m,
-                            UpdatedDateTime = new DateTime(2022, 9, 16, 14, 46, 31, 154, DateTimeKind.Local).AddTicks(7935),
+                            UpdatedDateTime = new DateTime(2022, 9, 23, 1, 17, 49, 100, DateTimeKind.Local).AddTicks(6556),
                             Volume = 13546213m
                         },
                         new
@@ -460,7 +460,7 @@ namespace CryptoGrimoire.Migrations
                             Low = 1300m,
                             Name = "eth_usdt",
                             SellPrice = 1350m,
-                            UpdatedDateTime = new DateTime(2022, 9, 16, 14, 46, 31, 154, DateTimeKind.Local).AddTicks(7938),
+                            UpdatedDateTime = new DateTime(2022, 9, 23, 1, 17, 49, 100, DateTimeKind.Local).AddTicks(6559),
                             Volume = 646133m
                         },
                         new
@@ -473,7 +473,7 @@ namespace CryptoGrimoire.Migrations
                             Low = 0.33m,
                             Name = "xrp_usdt",
                             SellPrice = 0.35m,
-                            UpdatedDateTime = new DateTime(2022, 9, 16, 14, 46, 31, 154, DateTimeKind.Local).AddTicks(7940),
+                            UpdatedDateTime = new DateTime(2022, 9, 23, 1, 17, 49, 100, DateTimeKind.Local).AddTicks(6561),
                             Volume = 354513m
                         },
                         new
@@ -486,7 +486,7 @@ namespace CryptoGrimoire.Migrations
                             Low = 1m,
                             Name = "usdt_usd",
                             SellPrice = 1.02m,
-                            UpdatedDateTime = new DateTime(2022, 9, 16, 14, 46, 31, 154, DateTimeKind.Local).AddTicks(7943),
+                            UpdatedDateTime = new DateTime(2022, 9, 23, 1, 17, 49, 100, DateTimeKind.Local).AddTicks(6564),
                             Volume = 45442445m
                         });
                 });

@@ -1,7 +1,9 @@
 ﻿@model CryptoGrimoire.Models.Exchange
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "Details";
     var tradingPairs = ViewBag.TradingPairs as List<PageTradingPair>;
+    ViewData["Title"] = Model.Name;
 }
 
 <div>
@@ -9,35 +11,37 @@
     <dl class="row">
 
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
+            @Localizer["Name"]
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Name)
         </dd>
+        
         <hr />
+        
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.LongDesc)
+            @Localizer["LongDesc"]
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.LongDesc)
         </dd>
         
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Url)
+            @Localizer["Url"]
         </dt>
         <dd class = "col-sm-10">
             <a href="@Model.Url">@Model.Url</a>
         </dd>
         
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ApiUrl)
+            @Localizer["ApiUrl"]
         </dt>   
         <dd class = "col-sm-10">
             <a href="@Model.ApiUrl">@Model.ApiUrl</a>
         </dd>
         
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.WebSocketUrl)
+            @Localizer["WebSocketUrl"]
         </dt>
         <dd class = "col-sm-10">
             <a href="@Model.WebSocketUrl">@Model.WebSocketUrl</a>
@@ -46,15 +50,15 @@
 </div>
 @if (tradingPairs.Count == 0)
 {
-    <p>Sorry, there are no pairs with this Exchange</p>
+    <p>@Localizer["NoPairs"]</p>
 }
 else
 {
     <table class="table table-bordered table-striped text-center align-middle">
     <thead>
         <tr>
-            <th scope="col">PairName</th>
-            <th scope="col">Description</th>
+            <th scope="col">@Localizer["PairName"]</th>
+                <th scope="col">@Localizer["PairDescription"]</th>
         </tr>
     </thead>
     <tbody>
@@ -73,4 +77,4 @@ else
 </table>
 }
 
-<a asp-action="Index">Back to List</a>
+<a asp-action="Index">@Localizer["BackToList"]</a>

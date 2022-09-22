@@ -1,14 +1,16 @@
 ﻿@model IEnumerable<CryptoGrimoire.Models.Exchange>
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "Exchanges";
+    ViewData["Title"] = @Localizer["Title"];
 }
 
 <table class="table table-bordered table-striped text-center align-middle">
     <thead>
         <tr>
-            <th scope="col">Image</th>
-            <th scope="col">@Html.DisplayNameFor(model => model.Name)</th>
-            <th scope="col">@Html.DisplayNameFor(model => model.ShortDesc)</th>
+            <th scope="col">@Localizer["ExchangeImage"]</th>
+            <th scope="col">@Localizer["ExchangeName"]</th>
+            <th scope="col">@Localizer["ExchangeShortDesc"]</th>
         </tr>
     </thead>
     <tbody>

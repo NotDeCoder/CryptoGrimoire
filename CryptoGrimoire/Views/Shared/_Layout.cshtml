@@ -1,4 +1,19 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Options
+
+@inject IViewLocalizer Localizer
+@inject IOptions<RequestLocalizationOptions> LocOptions
+
+@{
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var cultureItems = LocOptions.Value.SupportedUICultures
+        .Select(c => new SelectListItem { Value = c.Name, Text = c.NativeName })
+        .ToList();
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -22,21 +37,27 @@
                 <div class="collapse navbar-collapse" id="navbarColor03">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Home"]</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">@Localizer["Privacy"]</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Pairs" asp-action="Index">Pairs List</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Pairs" asp-action="Index">@Localizer["Pairs List"]</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Exchanges" asp-action="Index">Exchanges</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Exchanges" asp-action="Index">@Localizer["Exchanges"]</a>
                         </li>
                     </ul>
                     <form class="d-flex">
-                        <input class="form-control me-sm-2" type="text" placeholder="Search">
-                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                        <input class="form-control me-sm-2" type="text" placeholder="@Localizer["Search"]">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">@Localizer["Search"]</button>
+                    </form>
+                    <form style="margin-left: 30px;" class="d-flex" asp-controller="Home" asp-action="SetLanguage"
+                          asp-route-returnUrl="@Context.Request.Path@Context.Request.QueryString.Value" method="post" class="form-horizontal">
+                        @Localizer["Language"]: <select style="margin-left: 5px;" name="culture" onchange="this.form.submit();"
+                                          asp-for="@requestCulture.RequestCulture.UICulture.Name"
+                                          asp-items="cultureItems"></select>
                     </form>
                 </div>
             </div>
@@ -50,7 +71,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - CryptoGrimoire - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2022 - CryptoGrimoire - <a asp-area="" asp-controller="Home" asp-action="Privacy">@Localizer["Privacy"]</a>
         </div>
     </footer>
 @*    <script src="~/lib/jquery/dist/jquery.min.js"></script>

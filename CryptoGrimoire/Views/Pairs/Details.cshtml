@@ -1,27 +1,25 @@
 ﻿@model CryptoGrimoire.Models.PageTradingPair
-
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = Model.Name;
     var exchangeTradingPairs = ViewBag.ExchangeTradingPairs as List<CryptoGrimoire.Models.ExchangeTradingPair>;
     var othersPairsWithLeftElementOfPair = ViewBag.OthersPairsWithLeftElementOfPair as List<CryptoGrimoire.Models.PageTradingPair>;
     var othersPairsWithRightElementOfPair = ViewBag.OthersPairsWithRightElementOfPair as List<CryptoGrimoire.Models.PageTradingPair>;
-
 }
-
-<h1>Details</h1>
 
 <div>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
+            @Localizer["PairName"]
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Name)
         </dd>
 
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
+            @Localizer["Description"]
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Description)
@@ -38,14 +36,14 @@ else
     <table class="table table-bordered table-striped text-center align-middle">
         <thead>
             <tr>
-                <th scope="col">Exchange Name</th>
-                <th scope="col">PairName</th>
-                <th scope="col">LastPrice</th>
-                <th scope="col">SellPrice</th>
-                <th scope="col">BuyPrice</th>
-                <th scope="col">Hight 24h</th>
-                <th scope="col">Low 24h</th>
-                <th scope="col">Updated time</th>
+                <th scope="col">@Localizer["ExchangeName"]</th>
+                <th scope="col">@Localizer["PairName"]</th>
+                <th scope="col">@Localizer["LastPrice"]</th>
+                <th scope="col">@Localizer["SellPrice"]</th>
+                <th scope="col">@Localizer["BuyPrice"]</th>
+                <th scope="col">@Localizer["Hight24h"]</th>
+                <th scope="col">@Localizer["Low24h"]</th>
+                <th scope="col">@Localizer["UpdatedTime"]</th>
             </tr>
         </thead>
         <tbody>
@@ -84,16 +82,16 @@ else
 
 @if (othersPairsWithLeftElementOfPair == null || othersPairsWithLeftElementOfPair.Count == 0)
 {
-    <p>Sorry, there are no other pairs with @Model.Name.Split('_')[0]</p>
+    <p>@Localizer["NoPairsWith"] @Model.Name.Split('_')[0]</p>
 }
 else
 {
-    <p>Pairs with @Model.Name.Split('_')[0]: </p>
+    <p>@Localizer["PairsWith"] @Model.Name.Split('_')[0]: </p>
     <table class="table table-bordered table-striped text-center align-middle">
         <thead>
             <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Description</th>
+                <th scope="col">@Localizer["PairName"]</th>
+                <th scope="col">@Localizer["Description"]</th>
             </tr>
         </thead>
         <tbody>
@@ -114,16 +112,16 @@ else
 
 @if (othersPairsWithRightElementOfPair == null || othersPairsWithRightElementOfPair.Count == 0)
 {
-    <p>Sorry, there are no other pairs with @Model.Name.Split('_')[1]</p>
+    <p>@Localizer["NoPairsWith"] @Model.Name.Split('_')[1]</p>
 }
 else
 {
-    <p>Pairs with @Model.Name.Split('_')[1]: </p>
+    <p>@Localizer["PairsWith"] @Model.Name.Split('_')[1]: </p>
     <table class="table table-bordered table-striped text-center align-middle">
         <thead>
             <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Description</th>
+                <th scope="col">@Localizer["PairName"]</th>
+                <th scope="col">@Localizer["Description"]</th>
             </tr>
         </thead>
         <tbody>
@@ -141,4 +139,4 @@ else
         </tbody>
     </table>
 }
-<a asp-action="Index">Back to List</a>
+<a asp-action="Index">@Localizer["BackToList"]</a>
